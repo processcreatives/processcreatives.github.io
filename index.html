@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | UX/UI Designer</title>
+<meta name="description" content="UX/UI designer who understands the audience first, then adds a little art along the way.">
+<style>
+  :root {
+    --bg: #fbf7f1;
+    --ink: #1f1b2e;
+    --muted: #5b566b;
+    --accent: #e4572e;
+    --accent-2: #3a6ea5;
+    --card: #ffffff;
+    --line: #e6dfd3;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, nav, .tag, .btn { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--accent-2); }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff; padding: 8px 12px; }
+  .skip:focus { left: 8px; top: 8px; z-index: 10; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+  nav .logo { font-weight: 700; text-decoration: none; color: var(--ink); }
+  nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+  nav ul a { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
+  nav ul a:hover, nav ul a:focus { color: var(--accent); text-decoration: underline; }
+
+  .hero { padding: 72px 0 40px; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1.08; margin: 0 0 24px; letter-spacing: -0.02em; max-width: 16ch; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero p.intro { font-size: 1.25rem; max-width: 40ch; color: var(--muted); margin: 0 0 32px; }
+  .btn { display: inline-block; background: var(--ink); color: #fff; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+  .btn:hover, .btn:focus { background: var(--accent); }
+
+  /* The direct route, made scenic */
+  .route { width: 100%; height: 90px; margin-top: 40px; }
+  .route .direct { stroke: var(--ink); stroke-width: 3; fill: none; }
+  .route .scenic { stroke: var(--accent); stroke-width: 3; fill: none; stroke-linecap: round;
+                   stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 3.2s ease-out forwards .4s; }
+  .route .dot { fill: var(--accent-2); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .route .scenic { animation: none; stroke-dashoffset: 0; }
+    html { scroll-behavior: auto; }
+  }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: 1.9rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+  section .sub { color: var(--muted); margin: 0 0 32px; max-width: 56ch; }
+
+  .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(31,27,46,.10); }
+  .thumb { aspect-ratio: 16 / 10; background: linear-gradient(135deg, #f3d9c9, #d6e2f0); display: grid; place-items: center; color: var(--muted); font-family: system-ui, sans-serif; font-size: .9rem; }
+  .card .body { padding: 20px; }
+  .tag { display: inline-block; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+  .card h3 { margin: 0 0 8px; font-size: 1.2rem; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: .98rem; }
+  .card a.more { font-family: system-ui, sans-serif; font-weight: 600; }
+
+  .about { display: grid; gap: 32px; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .about { grid-template-columns: 1.3fr 1fr; } }
+  .about p { margin-top: 0; font-size: 1.1rem; }
+  .range { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .range p { margin: 0; font-size: 1.05rem; }
+
+  footer { padding: 48px 0 64px; border-top: 1px solid var(--line); color: var(--muted); font-family: system-ui, sans-serif; font-size: .95rem; }
+  footer a { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="logo" href="#top">Your Name</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>Who says the direct route can't be <em>scenic</em> too?</h1>
+    <p class="intro">I make a point of understanding my audience before I design for them, and I sneak in a little art along the way.</p>
+    <a class="btn" href="#work">See my work</a>
+
+    <svg class="route" viewBox="0 0 1000 90" preserveAspectRatio="none" role="img" aria-label="A straight line and a winding line both travelling from the same start to the same finish">
+      <line class="direct" x1="10" y1="45" x2="990" y2="45" stroke-dasharray="2 10" stroke-linecap="round" />
+      <path class="scenic" d="M10 45 C120 -10, 200 100, 320 45 S520 -5, 640 45 S860 100, 990 45" />
+      <circle class="dot" cx="10" cy="45" r="7" />
+      <circle class="dot" cx="990" cy="45" r="7" />
+    </svg>
+  </header>
+</div>
+
+<main>
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <p class="sub">Each project starts with who it's for, and what they needed to get done.</p>
+      <div class="grid">
+
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Project image placeholder">Replace with project image</div>
+          <div class="body">
+            <span class="tag">Case study 01</span>
+            <h3>Project title</h3>
+            <p>One sentence on the problem, who the audience was, and what you changed for them.</p>
+            <a class="more" href="#">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Project image placeholder">Replace with project image</div>
+          <div class="body">
+            <span class="tag">Case study 02</span>
+            <h3>Project title</h3>
+            <p>Great spot for your course navigation redesign: what was confusing, and how you cleared the path.</p>
+            <a class="more" href="#">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Project image placeholder">Replace with project image</div>
+          <div class="body">
+            <span class="tag">Case study 03</span>
+            <h3>Project title</h3>
+            <p>Try one that shows a very different audience from the first two, to show your range.</p>
+            <a class="more" href="#">Read the case study →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About</h2>
+        <p>I came to UX/UI design from instructional design, where I spent years designing course experiences and navigation for learners of every age and background.</p>
+        <p>That taught me to start with the person on the other side of the screen. I'm also an artist, so I care that the work is clear, and that it's a pleasure to spend time in.</p>
+      </div>
+      <aside class="range">
+        <p>Whether you're counting to ten or managing a retirement fund, I create for whoever's on the other side of the screen.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 style="font-family:system-ui,sans-serif;color:var(--ink);margin-top:0;">Let's talk</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a> · <a href="#">LinkedIn</a> · <a href="#">Behance</a></p>
+    <p>© <span id="yr"></span> Your Name</p>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
